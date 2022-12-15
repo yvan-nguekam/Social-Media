@@ -1,6 +1,12 @@
-export function Card({ children }) {
+export function Card({ children, noPadding }) {
+
+    let classes = "bg-white shadow-md shadow-gray-300 rounded-md mb-5";
+    if(!noPadding) {
+        classes += ' p-4';
+    }
+
     return (
-        <div className="bg-white shadow-md shadow-gray-300 rounded-md p-4 mb-5">
+        <div className={classes}>
             {children}
         </div>
     )
