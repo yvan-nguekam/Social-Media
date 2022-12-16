@@ -1,12 +1,15 @@
 import { NavigationCard } from "./NavigationCard";
 
-export function Layout({children}) {
+export function Layout({children, hideNavigation}) {
     return (
         <div className='flex mt-4 max-w-4xl mx-auto gap-6'>
-            <div className="w-3/12">
+            {!hideNavigation && (
+                <div className="w-3/12">
                 <NavigationCard/>
             </div>
-            <div className="w-9/12">
+            )}
+            
+            <div className={hideNavigation ? 'w-full' : "w-9/12"}>
                 {children}
             </div>
         </div>
